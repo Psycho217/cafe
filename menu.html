@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menu - Beyond Temptation | Cafe & Desserts, Surat</title>
+  <meta name="description" content="Browse the full menu of Beyond Temptation Surat. CADBees, cold coffees, magic shakes, desserts, and more.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header class="header" id="header">
+    <div class="header-inner">
+      <a href="index.html" class="logo">
+        <div class="logo-icon">B</div>
+        <span>Beyond Temptation</span>
+      </a>
+      <nav class="nav" id="nav">
+        <div class="nav-links">
+          <a href="index.html">Home</a>
+          <a href="menu.html" class="active">Menu</a>
+          <a href="book.html">Book a Table</a>
+        </div>
+      </nav>
+      <div class="header-actions">
+        <a href="https://www.instagram.com/beyond_temptation_surat" target="_blank" rel="noopener" class="btn-social" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+        </a>
+        <a href="book.html" class="btn-cta">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          Book Table
+        </a>
+        <button class="mobile-toggle" id="mobile-toggle" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- MENU HERO -->
+  <div class="menu-hero">
+    <div class="menu-hero-icon">B</div>
+    <h1>Beyond Temptation</h1>
+    <p class="tagline">Cafe & Desserts &middot; Every sip, a story</p>
+    <p class="location">Vesu, Surat</p>
+    <div class="menu-hero-stats">
+      <span class="menu-hero-stat">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v2H4z"/><path d="M4 8h12v2H4z"/><path d="M4 12h16v2H4z"/></svg>
+        <span id="total-items-count">0</span> items
+      </span>
+      <span class="menu-hero-stat">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+        6 categories
+      </span>
+    </div>
+  </div>
+
+  <!-- SEARCH BAR -->
+  <div class="menu-search-wrap">
+    <div class="menu-search-bar">
+      <input type="text" class="menu-search-input" id="menu-search" placeholder="Search shakes, coffees, desserts..." autocomplete="off" aria-label="Search menu">
+      <svg class="menu-search-icon-left" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      <div class="menu-search-kbd"><kbd>/</kbd></div>
+      <button class="menu-search-clear" id="search-clear" aria-label="Clear search">&times;</button>
+    </div>
+  </div>
+
+  <!-- SEARCH RESULTS (hidden until searching) -->
+  <div class="menu-search-results" id="search-results-section">
+    <div class="search-results-header">
+      <div class="search-results-count" id="search-results-count"></div>
+      <button class="search-back-btn" id="search-back">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+        Back to menu
+      </button>
+    </div>
+    <div class="menu-grid" id="search-results-grid"></div>
+    <div class="no-results" id="no-results" style="display:none;">
+      <div class="no-results-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      </div>
+      <h3>No items found</h3>
+      <p>Nothing matched "<strong id="no-results-query"></strong>". Try a different keyword.</p>
+    </div>
+  </div>
+
+  <!-- CATEGORY NAV -->
+  <nav class="category-nav" id="category-nav">
+    <div class="category-nav-inner" id="cat-nav">
+      <button class="cat-tab active" data-cat="cadbees">CADBees <span class="cat-tab-count">8</span></button>
+      <button class="cat-tab" data-cat="coffees">Cold Coffees <span class="cat-tab-count">5</span></button>
+      <button class="cat-tab" data-cat="shakes">Magic Shakes <span class="cat-tab-count">8</span></button>
+      <button class="cat-tab" data-cat="mastani">Mastani <span class="cat-tab-count">4</span></button>
+      <button class="cat-tab" data-cat="desserts">Desserts <span class="cat-tab-count">5</span></button>
+      <button class="cat-tab" data-cat="snacks">Snacks <span class="cat-tab-count">4</span></button>
+    </div>
+  </nav>
+
+  <!-- MENU CONTENT -->
+  <main class="menu-content" id="menu-content">
+
+    <!-- CADBees -->
+    <section class="menu-category active" data-section="cadbees">
+      <h2 class="menu-category-title reveal">CADBees</h2>
+      <div class="menu-grid reveal stagger">
+        <div class="menu-item" data-name="Crunchy CADBee" data-desc="Rich chocolate blended with crispy crunchy bits, drizzled with chocolate sauce. A textural masterpiece in every sip." data-price="₹189" data-img="https://images.unsplash.com/photo-1572490122747-3968b75cc699?w=500&q=80" data-cat="CADBees">
+          <img src="https://images.unsplash.com/photo-1572490122747-3968b75cc699?w=500&q=80" alt="Crunchy CADBee" class="menu-item-image">
+          <div class="menu-item-body">
+            <div class="menu-item-info"><h3>Crunchy CADBee</h3><p>Rich chocolate with crispy crunchy bits & chocolate drizzle</p></div>
+            <span class="menu-item-price">₹189</span>
+          </div>
+        </div>
+        <div class="menu-item" data-name="Crispy CADBee" data-desc="Smooth chocolate shake layered with crispy wafer crumbles and whipped cream. The ultimate crunch experience." data-price="₹179" data-img="https://images.unsplash.com/photo-1563805042-7684c019e1cb?w=500&q=80" data-cat="CADBees">
+          <img src="https://images.unsplash.com/photo-1563805042-7684c019e1cb?w=500&q=80" alt="Crispy CADBee" class="menu-item-image">
+          <div class="menu-item-body">
+            <div class="menu-item-info"><h3>Crispy CADBee</h3><p>Smooth chocolate with crispy wafer crumbles & cream</p></div>
+            <span class="menu-item-price">₹179</span>
+          </div>
+        </div>
+        <div class="menu-item" data-name="Butterscotch CADBee" data-desc="Velvety butterscotch blended with caramel notes and crunchy butterscotch chips. Sweet indulgence at its finest." data-price="₹199" data-img="https://images.unsplash.com/photo-1587314168485-3236d6710814?w=500&q=80" data-cat="CADBees">
+          <img src="https://images.unsplash.com/photo-1587314168485-3236d6710814?w=500&q=80" alt="Butterscotch CADBee" class="menu-item-image">
+          <div class="menu-item-body">
+            <div class="menu-item-info"><h3>Butterscotch CADBee</h3><p>Velvety butterscotch with caramel & crunchy chips</p></div>
+            <span class="menu-item-price">₹199</span>
+          </div>
+        </div>
+        <div class="menu-item" data-name="White CADBee" data-desc="Creamy white chocolate shake topped with vanilla cream and white choco shavings. Pure elegance." data-price="₹189" data-img="https://images.unsplash.com/photo-1579954115545-a95591f28bfc?w=500&q=80" data-cat="CADBees">
+          <img src="https://images.unsplash.com/photo-1579954115545-a95591f28bfc?w=500&q=80" alt="White CADBee" class="menu-item-image">
+          <div class="menu-item-body">
+            <div class="menu-item-info"><h3>White CADBee</h3><p>Creamy white chocolate with vanilla cream & shavings</p></div>
+            <span class="menu-item-price">₹189</span>
+          </div>
+        </div>
+        <div class="menu-item" data-name="Chocochips CADBee" data-desc="Loaded with real chocolate chips in a thick chocolatey base. A chocoholic's dream come true." data-price="₹199" data-img="https://images.unsplash.com/photo-1551024506-0bccd828d307?w=500&q=80" data-cat="CADBees">
+          <img src="https://images.unsplash.com/photo-1551024506-0bccd828d307?w=500&q=80" alt="Chocochips CADBee" class="menu-item-image">
+          <div class="menu-item-body">
+            <div class="menu-item-info"><h3>Chocochips CADBee</h3><p>Loaded with real chocolate chips in thick choco base</p></div>
+            <span class="menu-item-price">₹199</span>
+          </div>
+        </div>
+        <div class="menu-item" data-name="Orange CADBee" data-desc="Refreshing orange citrus twist on our signature chocolate blend. A zesty delight that surprises." data-price="₹189" data-img="https://images.unsplash.com/photo-1546173159-315724a31696?w=500&q=80" data-cat="CADBees">
+          <img src="https://images.unsplash.com/photo-1546173159-315724a31696?w=500&q=80" alt="Orange CADBee" class="menu-item-image">
+          <div class="menu-item-body">
+            <div class="menu-item-info"><h3>Orange CADBee</h3><p>Refreshing orange citrus twist on our chocolate blend</p></div>
+            <span class="menu-item-price">₹189</span>
+          </div>
+        </div>
+        <div class="menu-item" data-name="Kit Kat CADBee" data-desc="Blended Kit Kat pieces in a rich chocolate shake with wafer crunch topping. Break into bliss." data-price="₹219" data-img="https://images.unsplash.com/photo-1541658016709-82535e94bc69?w=500&q=80" data-cat="CADBees">
+          <img src="https://images.unsplash.com/photo-1541658016709-82535e94bc69?w=500&q=80" alt="Kit Kat CADBee" class="menu-item-image">
+          <div class="menu-item-body">
+            <div class="menu-item-info"><h3>Kit Kat CADBee</h3><p>Blended Kit Kat in rich chocolate with wafer crunch</p></div>
+            <span class="menu-item-price">₹219</span>
+          </div>
+        </div>
+        <div class="menu-item" data-name="Hazelnut CADBee" data-desc="Premium hazelnut infused chocolate shake with roasted nut topping. Nutella vibes in a glass." data-price="₹229" data-img="https://images.unsplash.com/photo-1606312619070-d48b4c652a52?w=500&q=80" data-cat="CADBees">
+          <img src="https://images.unsplash.com/photo-1606312619070-d48b4c652a52?w=500&q=80" alt="Hazelnut CADBee" class="menu-item-image">
+          <div class="menu-item-body">
+            <div class="menu-item-info"><h3>Hazelnut CADBee</h3><p>Premium hazelnut chocolate with roasted nut topping</p></div>
+            <span class="menu-item-price">₹229</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Cold Coffees -->
+    <section class="menu-category" data-section="coffees">
+      <h2 class="menu-category-title reveal">Cold Coffees</h2>
+      <div class="menu-grid reveal stagger">
+        <div class="menu-item" data-name="Beyond Special Cold Coffee" data-desc="Our signature cold coffee blend — creamy, bold, and perfectly sweetened. The house favorite that started it all." data-price="₹169" data-img="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?w=500&q=80" data-cat="Cold Coffee">
+          <img src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?w=500&q=80" alt="Beyond Special Cold Coffee" class="menu-item-image">
+          <div class="menu-item-body">
+            <div class="menu-item-info"><h3>Beyond Special</h3><p>Our signature blend — creamy, bold, perfectly sweetened</p></div>
+            <span class="menu-item-price">₹169</span>
+          </div>
+        </div>
+        <div class="menu-item" data-name="Yummy Cold Coffee" data-desc="Classic cold coffee with a creamy twist, topped with whipped cream. Simple and irresistible." data-price="₹149" data-img="https://images.unsplash.com/photo-1517701550927-30cf4ba1dba5?w=500&q=80" data-cat="Cold Coffee">
+          <img src="https://images.unsplash.com/photo-1517701550927-30cf4ba1dba5?w=500&q=80" alt="Yummy Cold Coffee" class="menu-item-image">
+          <div class="menu-item-body">
+            <div class="menu-item-info"><h3>Yummy Cold Coffee</h3><p>Classic cold coffee with creamy twist & whipped cream</p></div>
+            <span class="menu-item-price">₹149</span>
+          </div>
+        </div>
+        <div class="menu-item" data-name="Coffee with Crush" data-desc="Cold coffee blended with crushed Oreo cookies for a delightful textural experience." data-price="₹179" data-img="https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=500&q=80" data-cat="Cold Coffee">
+          <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=500&q=80" alt="Coffee with Crush" class="menu-item-image">
+          <div class="menu-item-body">
+            <div class="menu-item-info"><h3>Coffee with Crush</h3><p>Cold coffee blended with crushed cookies</p></div>
+            <span class="menu-item-price">₹179</span>
+          </div>
+        </div>
+        <div class="menu-item" data-name="Oreo Cold Coffee" data-desc="Rich espresso meets crushed Oreo cookies and vanilla cream. Dark, decadent, and divine." data-price="₹189" data-img="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=500&q=80" data-cat="Cold Coffee">
+          <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=500&q=80" alt="Oreo Cold Coffee" class="menu-item-image">
+          <div class="menu-item-body">
+            <div class="menu-item-info"><h3>Oreo Cold Coffee</h3><p>Rich espresso with crushed Oreo & vanilla cream</p></div>
+            <span class="menu-item-price">₹189</span>
+          </div>
+        </div>
+        <div class="menu-item" data-name="Dark Choco Cold Coffee" data-desc="Intense dark chocolate combined with strong espresso and cold milk. For the bold at heart." data-price="₹199" data-img="https://images.unsplash.com/photo-1514066558159-fc8c737ef259?w=500&q=80" data-cat="Cold Coffee">
+          <img src="https://images.unsplash.com/photo-1514066558159-fc8c737ef259?w=500&q=80" alt="Dark Choco Cold Coffee" class="menu-item-image">
+          <div class="menu-item-body">
+            <div class="menu-item-info"><h3>Dark Choco Cold Coffee</h3><p>Intense dark chocolate with strong espresso</p></div>
+            <span class="menu-item-price">₹199</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Magic Shakes -->
+    <section class="menu-category" data-section="shakes">
+      <h2 class="menu-category-title reveal">Magic Shakes</h2>
+      <div class="menu-grid reveal stagger">
+        <div class="menu-item" data-name="Vanilla Magic Shake" data-desc="Classic Madagascan vanilla blended to creamy perfection. Simple, smooth, and timeless." data-price="₹149" data-img="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=500&q=80" data-cat="Shakes">
+          <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=500&q=80" alt="Vanilla Magic Shake" class="menu-item-image">
+          <div class="menu-item-body">
+            <div class="menu-item-info"><h3>Vanilla Shake</h3><p>Classic Madagascan vanilla blended to perfection</p></div>
+            <span class="menu-item-price">₹149</span>
+          </div>
+        </div>
+        <div class="menu-item" data-name="Strawberry Magic Shake" data-desc="Fresh strawberry puree swirled into creamy milkshake with real berry chunks. Pink perfection." data-price="₹159" data-img="https://images.unsplash.com/photo-1553787499-6f9133860278?w=500&q=80" data-cat="Shakes">
+          <img src="https://images.unsplash.com/photo-1553787499-6f9133860278?w=500&q=80" alt="Strawberry Magic Shake" class="menu-item-image">
+          <div class="menu-item-body">
+            <div class="menu-item-info"><h3>Strawberry Shake</h3><p>Fresh strawberry puree with real berry chunks</p></div>
+            <span class="menu-item-price">₹159</span>
+          </div>
+        </div>
+        <div class="menu-item" data-name="Pista Magic Shake" data-desc="Roasted pistachio milkshake with a hint of cardamom. Desi royalty in a glass." data-price="₹179" data-img="https://images.unsplash.com/photo-1577805947697-89e18249d767?w=500&q=80" data-cat="Shakes">
+          <img src="https://images.unsplash.com/photo-1577805947697-89e18249d767?w=500&q=80" alt="Pista Magic Shake" class="menu-item-image">
+          <div class="menu-item-body">
+            <div class="menu-item-info"><h3>Pista Shake</h3><p>Roasted pistachio with a hint of cardamom</p></div>
+            <span class="menu-item-price">₹179</span>
+          </div>
+        </div>
+        <div class="menu-item" data-name="Mango Magic Shake" data-desc="Seasonal Alphonso mango blended into a thick, luscious shake. Summer's golden gift." data-price="₹169" data-img="https://images.unsplash.com/photo-1546173159-315724a31696?w=500&q=80" data-cat="Shakes">
+          <img src="https://images.unsplash.com/photo-1546173159-315724a31696?w=500&q=80" alt="Mango Magic Shake" class="menu-item-image">
+          <div class="menu-item-body">
+            <div class="menu-item-info"><h3>Mango Shake</h3><p>Seasonal Alphonso mango in a thick, luscious shake</p></div>
+            <span class="menu-item-price">₹169</span>
+          </div>
+        </div>
+        <div class="menu-item" data-name="Black Currant Magic Shake" data-desc="Bold black currant berries blended with cream for a rich, tangy delight. Unique and unforgettable." data-price="₹169" data-img="https://images.unsplash.com/photo-1626078437462-1e7aac5fa7f1?w=500&q=80" data-cat="Shakes">
+          <img src="https://images.unsplash.com/photo-1626078437462-1e7aac5fa7f1?w=500&q=80" alt="Black Currant Magic Shake" class="menu-item-image">
+          <div class="menu-item-body">
+            <div class="menu-item-info"><h3>Black Currant Shake</h3><p>Bold black currant berries with cream</p></div>
+            <span class="menu-item-price">₹169</span>
+          </div>
+        </div>
+        <div class="menu-item" data-name="Butterscotch Magic Shake" data-desc="Creamy butterscotch shake topped with caramel drizzle and crunchy bits. Comfort in a cup." data-price="₹159" data-img="https://images.unsplash.com/photo-1587314168485-3236d6710814?w=500&q=80" data-cat="Shakes">
+          <img src="https://images.unsplash.com/photo-1587314168485-3236d6710814?w=500&q=80" alt="Butterscotch Magic Shake" class="menu-item-image">
+          <div class="menu-item-body">
+            <div class="menu-item-info"><h3>Butterscotch Shake</h3><p>Creamy shake with caramel drizzle & crunchy bits</p></div>
+            <span class="menu-item-price">₹159</span>
+          </div>
+        </div>
+        <div class="menu-item" data-name="Tiramisu Magic Shake" data-desc="Italian tiramisu inspired shake with espresso, mascarpone cream and cocoa dusting." data-price="₹199" data-img="https://images.unsplash.com/photo-1579954115545-a95591f28bfc?w=500&q=80" data-cat="Shakes">
+          <img src="https://images.unsplash.com/photo-1579954115545-a95591f28bfc?w=500&q=80" alt="Tiramisu Magic Shake" class="menu-item-image">
+          <div class="menu-item-body">
+            <div class="menu-item-info"><h3>Tiramisu Shake</h3><p>Espresso, mascarpone cream & cocoa dusting</p></div>
+            <span class="menu-item-price">₹199</span>
+          </div>
+        </div>
+        <div class="menu-item" data-name="Red Velvet Cheesecake Shake" data-desc="Velvety red velvet blended with cream cheese frosting. Dessert meets beverage perfection." data-price="₹209" data-img="https://images.unsplash.com/photo-1572490122747-3968b75cc699?w=500&q=80" data-cat="Shakes">
+          <img src="https://images.unsplash.com/photo-1572490122747-3968b75cc699?w=500&q=80" alt="Red Velvet Cheesecake Shake" class="menu-item-image">
+          <div class="menu-item-body">
+            <div class="menu-item-info"><h3>Red Velvet Cheesecake</h3><p>Red velvet blended with cream cheese frosting</p></div>
+            <span class="menu-item-price">₹209</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Mastani -->
+    <section class="menu-category" data-section="mastani">
+      <h2 class="menu-category-title reveal">Mastani</h2>
+      <div class="menu-grid reveal stagger">
+        <div class="menu-item" data-name="Classic Mastani" data-desc="Traditional Pune-style thick milkshake topped with ice cream, dry fruits, and cherries. A royal treat." data-price="₹189" data-img="https://images.unsplash.com/photo-1577805947697-89e18249d767?w=500&q=80" data-cat="Mastani">
+          <img src="https://images.unsplash.com/photo-1577805947697-89e18249d767?w=500&q=80" alt="Classic Mastani" class="menu-item-image">
+          <div class="menu-item-body">
+            <div class="menu-item-info"><h3>Classic Mastani</h3><p>Thick shake with ice cream, dry fruits & cherries</p></div>
+            <span class="menu-item-price">₹189</span>
+          </div>
+        </div>
+        <div class="menu-item" data-name="Chocolate Mastani" data-desc="Rich chocolate shake crowned with chocolate ice cream, choco chips, and a cherry on top." data-price="₹209" data-img="https://images.unsplash.com/photo-1563805042-7684c019e1cb?w=500&q=80" data-cat="Mastani">
+          <img src="https://images.unsplash.com/photo-1563805042-7684c019e1cb?w=500&q=80" alt="Chocolate Mastani" class="menu-item-image">
+          <div class="menu-item-body">
+            <div class="menu-item-info"><h3>Chocolate Mastani</h3><p>Rich chocolate with choco ice cream & choco chips</p></div>
+            <span class="menu-item-price">₹209</span>
+          </div>
+        </div>
+        <div class="menu-item" data-name="Mango Mastani" data-desc="Fresh mango pulp shake with mango ice cream and dry fruit topping. Seasonal special." data-price="₹199" data-img="https://images.unsplash.com/photo-1546173159-315724a31696?w=500&q=80" data-cat="Mastani">
+          <img src="https://images.unsplash.com/photo-1546173159-315724a31696?w=500&q=80" alt="Mango Mastani" class="menu-item-image">
+          <div class="menu-item-body">
+            <div class="menu-item-info"><h3>Mango Mastani</h3><p>Fresh mango pulp with mango ice cream & dry fruits</p></div>
+            <span class="menu-item-price">₹199</span>
+          </div>
+        </div>
+        <div class="menu-item" data-name="Butterscotch Mastani" data-desc="Butterscotch shake loaded with butterscotch ice cream, caramel sauce, and crunchy nuts." data-price="₹199" data-img="https://images.unsplash.com/photo-1587314168485-3236d6710814?w=500&q=80" data-cat="Mastani">
+          <img src="https://images.unsplash.com/photo-1587314168485-3236d6710814?w=500&q=80" alt="Butterscotch Mastani" class="menu-item-image">
+          <div class="menu-item-body">
+            <div class="menu-item-info"><h3>Butterscotch Mastani</h3><p>Butterscotch shake with ice cream, caramel & nuts</p></div>
+            <span class="menu-item-price">₹199</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Desserts -->
+    <section class="menu-category" data-section="desserts">
+      <h2 class="menu-category-title reveal">Desserts</h2>
+      <div class="menu-grid reveal stagger">
+        <div class="menu-item" data-name="Sizzling Brownie" data-desc="Warm fudgy brownie served on a sizzling plate with vanilla ice cream and hot chocolate sauce." data-price="₹229" data-img="https://images.unsplash.com/photo-1606313564200-e75d5e30476c?w=500&q=80" data-cat="Desserts">
+          <img src="https://images.unsplash.com/photo-1606313564200-e75d5e30476c?w=500&q=80" alt="Sizzling Brownie" class="menu-item-image">
+          <div class="menu-item-body">
+            <div class="menu-item-info"><h3>Sizzling Brownie</h3><p>Warm fudgy brownie with vanilla ice cream</p></div>
+            <span class="menu-item-price">₹229</span>
+          </div>
+        </div>
+        <div class="menu-item" data-name="Blueberry Cheesecake" data-desc="New York style baked cheesecake with fresh blueberry compote. Creamy, tangy, heavenly." data-price="₹249" data-img="https://images.unsplash.com/photo-1533134242443-d4fd215305ad?w=500&q=80" data-cat="Desserts">
+          <img src="https://images.unsplash.com/photo-1533134242443-d4fd215305ad?w=500&q=80" alt="Blueberry Cheesecake" class="menu-item-image">
+          <div class="menu-item-body">
+            <div class="menu-item-info"><h3>Blueberry Cheesecake</h3><p>Baked cheesecake with fresh blueberry compote</p></div>
+            <span class="menu-item-price">₹249</span>
+          </div>
+        </div>
+        <div class="menu-item" data-name="Red Velvet Pastry" data-desc="Layers of moist red velvet sponge with cream cheese frosting. A slice of pure joy." data-price="₹159" data-img="https://images.unsplash.com/photo-1586788680434-30d324b2d46f?w=500&q=80" data-cat="Desserts">
+          <img src="https://images.unsplash.com/photo-1586788680434-30d324b2d46f?w=500&q=80" alt="Red Velvet Pastry" class="menu-item-image">
+          <div class="menu-item-body">
+            <div class="menu-item-info"><h3>Red Velvet Pastry</h3><p>Moist red velvet with cream cheese frosting</p></div>
+            <span class="menu-item-price">₹159</span>
+          </div>
+        </div>
+        <div class="menu-item" data-name="Chocolate Truffle Cake" data-desc="Dense, rich chocolate truffle cake with ganache glaze. For the true chocolate lover." data-price="₹179" data-img="https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=500&q=80" data-cat="Desserts">
+          <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=500&q=80" alt="Chocolate Truffle Cake" class="menu-item-image">
+          <div class="menu-item-body">
+            <div class="menu-item-info"><h3>Chocolate Truffle Cake</h3><p>Dense chocolate truffle with ganache glaze</p></div>
+            <span class="menu-item-price">₹179</span>
+          </div>
+        </div>
+        <div class="menu-item" data-name="Ice Cream Sundae" data-desc="Three scoops of premium ice cream with hot fudge, nuts, sprinkles and a cherry. A classic celebration." data-price="₹199" data-img="https://images.unsplash.com/photo-1563805042-7684c019e1cb?w=500&q=80" data-cat="Desserts">
+          <img src="https://images.unsplash.com/photo-1563805042-7684c019e1cb?w=500&q=80" alt="Ice Cream Sundae" class="menu-item-image">
+          <div class="menu-item-body">
+            <div class="menu-item-info"><h3>Ice Cream Sundae</h3><p>Three scoops with hot fudge, nuts & sprinkles</p></div>
+            <span class="menu-item-price">₹199</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Snacks -->
+    <section class="menu-category" data-section="snacks">
+      <h2 class="menu-category-title reveal">Snacks</h2>
+      <div class="menu-grid reveal stagger">
+        <div class="menu-item" data-name="Club Sandwich" data-desc="Triple-decker grilled sandwich with fresh veggies, cheese, and our secret house sauce." data-price="₹179" data-img="https://images.unsplash.com/photo-1528735602780-2552fd46c7af?w=500&q=80" data-cat="Snacks">
+          <img src="https://images.unsplash.com/photo-1528735602780-2552fd46c7af?w=500&q=80" alt="Club Sandwich" class="menu-item-image">
+          <div class="menu-item-body">
+            <div class="menu-item-info"><h3>Club Sandwich</h3><p>Triple-decker grilled with veggies, cheese & sauce</p></div>
+            <span class="menu-item-price">₹179</span>
+          </div>
+        </div>
+        <div class="menu-item" data-name="Loaded Fries" data-desc="Crispy golden fries smothered in cheese sauce, jalapenos, and spicy mayo. Dangerously addictive." data-price="₹149" data-img="https://images.unsplash.com/photo-1573080496219-bb080dd4f877?w=500&q=80" data-cat="Snacks">
+          <img src="https://images.unsplash.com/photo-1573080496219-bb080dd4f877?w=500&q=80" alt="Loaded Fries" class="menu-item-image">
+          <div class="menu-item-body">
+            <div class="menu-item-info"><h3>Loaded Fries</h3><p>Crispy fries with cheese sauce, jalapenos & mayo</p></div>
+            <span class="menu-item-price">₹149</span>
+          </div>
+        </div>
+        <div class="menu-item" data-name="Cheesy Nachos" data-desc="Crunchy tortilla chips loaded with melted cheese, salsa, sour cream and guacamole." data-price="₹169" data-img="https://images.unsplash.com/photo-1513456852971-30c0b8199d4d?w=500&q=80" data-cat="Snacks">
+          <img src="https://images.unsplash.com/photo-1513456852971-30c0b8199d4d?w=500&q=80" alt="Cheesy Nachos" class="menu-item-image">
+          <div class="menu-item-body">
+            <div class="menu-item-info"><h3>Cheesy Nachos</h3><p>Tortilla chips with cheese, salsa & guacamole</p></div>
+            <span class="menu-item-price">₹169</span>
+          </div>
+        </div>
+        <div class="menu-item" data-name="Paneer Tikka Sandwich" data-desc="Grilled paneer tikka stuffed in toasted bread with mint chutney and onion rings." data-price="₹189" data-img="https://images.unsplash.com/photo-1539252554453-80ab65ce3586?w=500&q=80" data-cat="Snacks">
+          <img src="https://images.unsplash.com/photo-1539252554453-80ab65ce3586?w=500&q=80" alt="Paneer Tikka Sandwich" class="menu-item-image">
+          <div class="menu-item-body">
+            <div class="menu-item-info"><h3>Paneer Tikka Sandwich</h3><p>Grilled paneer tikka with mint chutney</p></div>
+            <span class="menu-item-price">₹189</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ITEM DETAIL MODAL -->
+  <div class="modal-overlay" id="modal-overlay">
+    <div class="modal-card">
+      <div class="modal-image-wrap">
+        <img src="" alt="" id="modal-image">
+        <button class="modal-close" id="modal-close">&times;</button>
+        <span class="modal-badge" id="modal-badge"></span>
+      </div>
+      <div class="modal-body">
+        <div class="modal-title-row">
+          <h2 class="modal-title" id="modal-title"></h2>
+          <span class="modal-price" id="modal-price"></span>
+        </div>
+        <p class="modal-desc" id="modal-desc"></p>
+        <div class="modal-tags" id="modal-tags"></div>
+        <a href="https://www.zomato.com/it/surat/beyond-temptation-adajan-patiya?amp=1" target="_blank" rel="noopener" class="btn-primary">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+          Order on Zomato
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- SCROLL TO TOP -->
+  <button class="scroll-top-btn" id="scroll-top" aria-label="Scroll to top">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
+  </button>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <div class="footer-logo-icon">B</div>
+            <span>Beyond Temptation</span>
+          </div>
+          <p>Surat's beloved cafe destination for premium shakes, desserts, and good vibes. Visit us in Vesu.</p>
+          <div class="footer-socials">
+            <a href="https://www.instagram.com/beyond_temptation_surat" target="_blank" rel="noopener" class="footer-social-link" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            </a>
+            <a href="https://www.google.com/maps/place/Beyond+Temptation+Surat/" target="_blank" rel="noopener" class="footer-social-link" aria-label="Google Maps">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </a>
+            <a href="tel:+919512833139" class="footer-social-link" aria-label="Phone">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            </a>
+          </div>
+        </div>
+        <div class="footer-column">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="book.html">Book a Table</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h4>Visit Us</h4>
+          <ul>
+            <li><a href="https://www.google.com/maps/place/Beyond+Temptation+Surat/" target="_blank" rel="noopener">Ground Floor, Atlanta Shoppers, G-53</a></li>
+            <li><a href="https://www.google.com/maps/place/Beyond+Temptation+Surat/" target="_blank" rel="noopener">Beside Reliance Market, Vesu</a></li>
+            <li><a href="https://www.google.com/maps/place/Beyond+Temptation+Surat/" target="_blank" rel="noopener">Surat, Gujarat 395007</a></li>
+            <li><a href="tel:+919512833139">+91 95128 33139</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Beyond Temptation Surat. All rights reserved.</p>
+        <div class="footer-bottom-links">
+          <a href="https://www.instagram.com/beyond_temptation_surat" target="_blank" rel="noopener">Instagram</a>
+          <a href="https://www.google.com/maps/place/Beyond+Temptation+Surat/" target="_blank" rel="noopener">Directions</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('mobile-toggle').addEventListener('click', () => {
+      document.getElementById('nav').classList.toggle('open');
+    });
+
+    const searchInput = document.getElementById('menu-search');
+    const searchClear = document.getElementById('search-clear');
+    const searchSection = document.getElementById('search-results-section');
+    const searchGrid = document.getElementById('search-results-grid');
+    const searchCount = document.getElementById('search-results-count');
+    const noResults = document.getElementById('no-results');
+    const noResultsQuery = document.getElementById('no-results-query');
+    const categoryNav = document.getElementById('category-nav');
+    const menuContent = document.getElementById('menu-content');
+    const searchBack = document.getElementById('search-back');
+
+    const allItems = Array.from(document.querySelectorAll('#menu-content .menu-item')).map(el => ({
+      name: el.dataset.name,
+      desc: el.dataset.desc,
+      price: el.dataset.price,
+      img: el.dataset.img,
+      cat: el.dataset.cat,
+      el: el
+    }));
+
+    document.getElementById('total-items-count').textContent = allItems.length;
+
+    function openModal(data) {
+      document.getElementById('modal-image').src = data.img;
+      document.getElementById('modal-image').alt = data.name;
+      document.getElementById('modal-title').textContent = data.name;
+      document.getElementById('modal-price').textContent = data.price;
+      document.getElementById('modal-desc').textContent = data.desc;
+      document.getElementById('modal-badge').textContent = data.cat;
+      const tagsEl = document.getElementById('modal-tags');
+      tagsEl.innerHTML = '';
+      ['Vegetarian', data.cat].forEach(t => {
+        const span = document.createElement('span');
+        span.className = 'modal-tag';
+        span.textContent = t;
+        tagsEl.appendChild(span);
+      });
+      document.getElementById('modal-overlay').classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function highlightMatch(text, query) {
+      if (!query) return text;
+      const regex = new RegExp(`(${query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')})`, 'gi');
+      return text.replace(regex, '<mark>$1</mark>');
+    }
+
+    function buildResultCard(item, query) {
+      const card = document.createElement('div');
+      card.className = 'menu-item visible';
+
+      const imgWrap = document.createElement('div');
+      imgWrap.className = 'menu-item-image-wrap';
+
+      const img = document.createElement('img');
+      img.className = 'menu-item-image';
+      img.src = item.img;
+      img.alt = item.name;
+      img.loading = 'lazy';
+      imgWrap.appendChild(img);
+
+      const badge = document.createElement('span');
+      badge.className = 'search-result-badge';
+      badge.textContent = item.cat;
+      imgWrap.appendChild(badge);
+
+      card.appendChild(imgWrap);
+
+      const body = document.createElement('div');
+      body.className = 'menu-item-body';
+      const info = document.createElement('div');
+      info.className = 'menu-item-info';
+      const h3 = document.createElement('h3');
+      h3.innerHTML = highlightMatch(item.name, query);
+      const p = document.createElement('p');
+      const shortDesc = item.el.querySelector('.menu-item-info p').textContent;
+      p.innerHTML = highlightMatch(shortDesc, query);
+      info.appendChild(h3);
+      info.appendChild(p);
+      body.appendChild(info);
+
+      const price = document.createElement('span');
+      price.className = 'menu-item-price';
+      price.textContent = item.price;
+      body.appendChild(price);
+
+      card.appendChild(body);
+
+      card.addEventListener('click', () => openModal(item));
+      return card;
+    }
+
+    let searchDebounce = null;
+
+    function runSearch(query) {
+      const q = query.trim().toLowerCase();
+
+      if (!q) {
+        exitSearch();
+        return;
+      }
+
+      searchClear.classList.add('visible');
+      categoryNav.style.display = 'none';
+      menuContent.style.display = 'none';
+      searchSection.classList.add('active');
+
+      const matches = allItems.filter(item =>
+        item.name.toLowerCase().includes(q) ||
+        item.cat.toLowerCase().includes(q) ||
+        item.desc.toLowerCase().includes(q)
+      );
+
+      searchGrid.innerHTML = '';
+      noResults.style.display = 'none';
+
+      if (matches.length === 0) {
+        noResultsQuery.textContent = query.trim();
+        noResults.style.display = 'block';
+        searchCount.innerHTML = '';
+        return;
+      }
+
+      searchCount.innerHTML = `<span>${matches.length}</span> item${matches.length !== 1 ? 's' : ''} found`;
+
+      matches.forEach((item, i) => {
+        const card = buildResultCard(item, query.trim());
+        card.style.animationDelay = `${i * 0.04}s`;
+        searchGrid.appendChild(card);
+      });
+    }
+
+    function exitSearch() {
+      searchInput.value = '';
+      searchSection.classList.remove('active');
+      categoryNav.style.display = '';
+      menuContent.style.display = '';
+      searchClear.classList.remove('visible');
+    }
+
+    searchInput.addEventListener('input', () => {
+      clearTimeout(searchDebounce);
+      searchDebounce = setTimeout(() => runSearch(searchInput.value), 120);
+    });
+
+    searchClear.addEventListener('click', () => {
+      exitSearch();
+      searchInput.focus();
+    });
+
+    searchBack.addEventListener('click', () => {
+      exitSearch();
+      searchInput.focus();
+    });
+
+    document.addEventListener('keydown', e => {
+      if (e.key === '/' && document.activeElement.tagName !== 'INPUT' && document.activeElement.tagName !== 'TEXTAREA') {
+        e.preventDefault();
+        searchInput.focus();
+        searchInput.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }
+      if (e.key === 'Escape' && searchInput === document.activeElement && searchInput.value) {
+        exitSearch();
+        searchInput.blur();
+      }
+    });
+
+    document.querySelectorAll('.cat-tab').forEach(tab => {
+      tab.addEventListener('click', () => {
+        const cat = tab.dataset.cat;
+        document.querySelectorAll('.cat-tab').forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+        document.querySelectorAll('.menu-category').forEach(s => s.classList.remove('active'));
+        const section = document.querySelector(`.menu-category[data-section="${cat}"]`);
+        if (section) section.classList.add('active');
+        tab.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+      });
+    });
+
+    const overlay = document.getElementById('modal-overlay');
+
+    document.querySelectorAll('#menu-content .menu-item').forEach(item => {
+      item.addEventListener('click', () => openModal({
+        name: item.dataset.name,
+        desc: item.dataset.desc,
+        price: item.dataset.price,
+        img: item.dataset.img,
+        cat: item.dataset.cat
+      }));
+    });
+
+    function closeModal() {
+      overlay.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    document.getElementById('modal-close').addEventListener('click', closeModal);
+    overlay.addEventListener('click', e => { if (e.target === overlay) closeModal(); });
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape' && overlay.classList.contains('active')) closeModal();
+    });
+
+    const revealObs = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          if (entry.target.classList.contains('stagger')) {
+            entry.target.querySelectorAll(':scope > *').forEach(child => child.classList.add('visible'));
+          }
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+    document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .stagger').forEach(el => revealObs.observe(el));
+
+    document.querySelectorAll('.cat-tab').forEach(tab => {
+      tab.addEventListener('click', () => {
+        setTimeout(() => {
+          document.querySelectorAll('.menu-category.active .reveal, .menu-category.active .stagger').forEach(el => {
+            el.classList.remove('visible');
+            el.querySelectorAll('.visible').forEach(c => c.classList.remove('visible'));
+            revealObs.observe(el);
+          });
+        }, 50);
+      });
+    });
+
+    const scrollTopBtn = document.getElementById('scroll-top');
+    window.addEventListener('scroll', () => {
+      scrollTopBtn.classList.toggle('visible', window.scrollY > 400);
+    }, { passive: true });
+    scrollTopBtn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  </script>
+
+</body>
+
+</html>
