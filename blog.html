@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog — Café</title>
+  <meta name="description" content="Read our latest stories, coffee guides, and recipes.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header class="header" id="header">
+    <div class="header-inner">
+      <a href="index.html" class="logo">
+        <div class="logo-icon">C</div>
+        <span>Café</span>
+      </a>
+      <nav class="nav" id="nav">
+        <div class="nav-links">
+          <a href="index.html">Home</a>
+          <a href="menu.html">Menu</a>
+          <a href="book.html">Reserve</a>
+          <a href="blog.html" class="active">Blog</a>
+          <a href="contact.html">Contact</a>
+        </div>
+      </nav>
+      <div class="header-actions">
+        <a href="#" class="btn-social" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+        </a>
+        <a href="menu.html" class="btn-cta">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v2H4z"/><path d="M4 8h12v2H4z"/><path d="M4 12h16v2H4z"/><path d="M4 16h10v2H4z"/></svg>
+          View Menu
+        </a>
+        <button class="mobile-toggle" id="mobile-toggle" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- PAGE HERO -->
+  <div class="page-hero">
+    <h1>Journal</h1>
+    <p>Stories about coffee, culture, and our community.</p>
+  </div>
+
+  <!-- BLOG SECTION -->
+  <section class="blog-section">
+    <div class="blog-grid reveal stagger">
+      <!-- POST 1 -->
+      <article class="blog-card">
+        <div class="blog-card-img">
+          <img src="https://images.unsplash.com/photo-1497935586351-b67a49e012bf?w=800&q=80" alt="Pour over coffee">
+          <span class="blog-badge">Coffee Guide</span>
+        </div>
+        <div class="blog-card-body">
+          <div class="blog-meta">
+            <span>May 12, 2026</span>
+            <span class="dot">&middot;</span>
+            <span>By Alex J.</span>
+          </div>
+          <h3><a href="#">The Art of the Perfect Pour Over</a></h3>
+          <p>Mastering a pour over at home isn't just about the beans—it's about patience, water temperature, and the right grind size. Here is our step-by-step guide.</p>
+          <a href="#" class="btn-read-more">Read More <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></a>
+        </div>
+      </article>
+
+      <!-- POST 2 -->
+      <article class="blog-card">
+        <div class="blog-card-img">
+          <img src="https://images.unsplash.com/photo-1551024506-0bccd828d307?w=800&q=80" alt="Pastry baking">
+          <span class="blog-badge">Behind the Scenes</span>
+        </div>
+        <div class="blog-card-body">
+          <div class="blog-meta">
+            <span>May 05, 2026</span>
+            <span class="dot">&middot;</span>
+            <span>By Sarah M.</span>
+          </div>
+          <h3><a href="#">Meet Our Head Baker</a></h3>
+          <p>Every morning before the sun comes up, our kitchen comes alive. Get to know the inspiration and dedication behind our daily selection of artisan pastries.</p>
+          <a href="#" class="btn-read-more">Read More <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></a>
+        </div>
+      </article>
+
+      <!-- POST 3 -->
+      <article class="blog-card">
+        <div class="blog-card-img">
+          <img src="https://images.unsplash.com/photo-1600093463592-8e36ae95ef56?w=800&q=80" alt="Coffee beans">
+          <span class="blog-badge">Sourcing</span>
+        </div>
+        <div class="blog-card-body">
+          <div class="blog-meta">
+            <span>April 28, 2026</span>
+            <span class="dot">&middot;</span>
+            <span>By David K.</span>
+          </div>
+          <h3><a href="#">Understanding Single-Origin Beans</a></h3>
+          <p>What does 'single-origin' actually mean, and why does it matter? We explore how geography, climate, and soil altitude shape the flavor in your cup.</p>
+          <a href="#" class="btn-read-more">Read More <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></a>
+        </div>
+      </article>
+
+      <!-- POST 4 -->
+      <article class="blog-card">
+        <div class="blog-card-img">
+          <img src="https://images.unsplash.com/photo-1572490122747-3968b75cc699?w=800&q=80" alt="Summer drinks">
+          <span class="blog-badge">Recipes</span>
+        </div>
+        <div class="blog-card-body">
+          <div class="blog-meta">
+            <span>April 15, 2026</span>
+            <span class="dot">&middot;</span>
+            <span>By Alex J.</span>
+          </div>
+          <h3><a href="#">3 Refreshing Cold Brew Variations</a></h3>
+          <p>As the weather warms up, it’s time to switch to cold brew. Here are three creative ways to elevate your iced coffee experience at home.</p>
+          <a href="#" class="btn-read-more">Read More <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></a>
+        </div>
+      </article>
+      
+      <!-- POST 5 -->
+      <article class="blog-card">
+        <div class="blog-card-img">
+          <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=800&q=80" alt="Latte art">
+          <span class="blog-badge">Community</span>
+        </div>
+        <div class="blog-card-body">
+          <div class="blog-meta">
+            <span>April 02, 2026</span>
+            <span class="dot">&middot;</span>
+            <span>By The Team</span>
+          </div>
+          <h3><a href="#">Upcoming Latte Art Throwdown</a></h3>
+          <p>We are hosting our first ever neighborhood latte art competition! Whether you are a seasoned barista or just love drinking coffee, come join the fun.</p>
+          <a href="#" class="btn-read-more">Read More <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></a>
+        </div>
+      </article>
+
+      <!-- POST 6 -->
+      <article class="blog-card">
+        <div class="blog-card-img">
+          <img src="https://images.unsplash.com/photo-1563805042-7684c019e1cb?w=800&q=80" alt="Desserts">
+          <span class="blog-badge">Menu Updates</span>
+        </div>
+        <div class="blog-card-body">
+          <div class="blog-meta">
+            <span>March 20, 2026</span>
+            <span class="dot">&middot;</span>
+            <span>By Sarah M.</span>
+          </div>
+          <h3><a href="#">Spring Dessert Menu is Here</a></h3>
+          <p>Say hello to lighter textures and brighter flavors. Our new spring dessert menu features citrus tarts, berry pavlovas, and matcha infused treats.</p>
+          <a href="#" class="btn-read-more">Read More <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <div class="footer-logo-icon">C</div>
+            <span>Café</span>
+          </div>
+          <p>Your neighborhood café for artisan coffee, handcrafted desserts, and good company.</p>
+          <div class="footer-socials">
+            <a href="#" class="footer-social-link" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            </a>
+            <a href="#" class="footer-social-link" aria-label="Location">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </a>
+            <a href="tel:+15550123456" class="footer-social-link" aria-label="Phone">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            </a>
+          </div>
+        </div>
+        <div class="footer-column">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="book.html">Reserve</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h4>Visit Us</h4>
+          <ul>
+            <li><a href="#">742 Evergreen Terrace</a></li>
+            <li><a href="#">Suite 100, Downtown</a></li>
+            <li><a href="#">New York, NY 10001</a></li>
+            <li><a href="tel:+15550123456">+1 (555) 012-3456</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Café. All rights reserved.</p>
+        <div class="footer-bottom-links">
+          <a href="#">Instagram</a>
+          <a href="#">Directions</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('mobile-toggle').addEventListener('click', () => {
+      document.getElementById('nav').classList.toggle('open');
+    });
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          if (entry.target.classList.contains('stagger')) {
+            entry.target.querySelectorAll(':scope > *').forEach(child => child.classList.add('visible'));
+          }
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+    document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .stagger').forEach(el => observer.observe(el));
+  </script>
+
+</body>
+
+</html>

@@ -4,11 +4,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Book a Table - Beyond Temptation | Vesu, Surat</title>
-  <meta name="description" content="Reserve your table at Beyond Temptation Surat. Book online or via WhatsApp for a delightful cafe experience.">
+  <title>Reserve a Table — Café</title>
+  <meta name="description" content="Reserve your table at Café. Book online for a delightful coffee and dessert experience.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 
@@ -18,18 +18,20 @@
   <header class="header" id="header">
     <div class="header-inner">
       <a href="index.html" class="logo">
-        <div class="logo-icon">B</div>
-        <span>Beyond Temptation</span>
+        <div class="logo-icon">C</div>
+        <span>Café</span>
       </a>
       <nav class="nav" id="nav">
         <div class="nav-links">
           <a href="index.html">Home</a>
           <a href="menu.html">Menu</a>
-          <a href="book.html" class="active">Book a Table</a>
+          <a href="book.html" class="active">Reserve</a>
+          <a href="blog.html">Blog</a>
+          <a href="contact.html">Contact</a>
         </div>
       </nav>
       <div class="header-actions">
-        <a href="https://www.instagram.com/beyond_temptation_surat" target="_blank" rel="noopener" class="btn-social" aria-label="Instagram">
+        <a href="#" class="btn-social" aria-label="Instagram">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
         </a>
         <a href="menu.html" class="btn-cta">
@@ -50,7 +52,7 @@
       <div class="shape shape-2"></div>
     </div>
     <h1>Reserve Your Table</h1>
-    <p>Skip the wait &mdash; book your favorite spot at Beyond Temptation and walk right in.</p>
+    <p>Skip the wait &mdash; book your favorite spot and walk right in.</p>
   </div>
 
   <!-- BOOKING SECTION -->
@@ -67,11 +69,11 @@
             <div class="form-grid">
               <div class="form-group">
                 <label for="name">Your Name</label>
-                <input type="text" id="name" placeholder="e.g. Raj Patel" required>
+                <input type="text" id="name" placeholder="e.g. Jane Doe" required>
               </div>
               <div class="form-group">
                 <label for="phone">Phone Number</label>
-                <input type="tel" id="phone" placeholder="+91 98765 43210" required>
+                <input type="tel" id="phone" placeholder="+1 (555) 000-0000" required>
               </div>
               <div class="form-group">
                 <label for="email">Email <span class="optional">(optional)</span></label>
@@ -85,6 +87,14 @@
                 <label for="time">Preferred Time</label>
                 <select id="time" required>
                   <option value="" disabled selected>Select time</option>
+                  <option value="08:00">8:00 AM</option>
+                  <option value="08:30">8:30 AM</option>
+                  <option value="09:00">9:00 AM</option>
+                  <option value="09:30">9:30 AM</option>
+                  <option value="10:00">10:00 AM</option>
+                  <option value="10:30">10:30 AM</option>
+                  <option value="11:00">11:00 AM</option>
+                  <option value="11:30">11:30 AM</option>
                   <option value="12:00">12:00 PM</option>
                   <option value="12:30">12:30 PM</option>
                   <option value="13:00">1:00 PM</option>
@@ -106,8 +116,6 @@
                   <option value="21:00">9:00 PM</option>
                   <option value="21:30">9:30 PM</option>
                   <option value="22:00">10:00 PM</option>
-                  <option value="22:30">10:30 PM</option>
-                  <option value="23:00">11:00 PM</option>
                 </select>
               </div>
               <div class="form-group">
@@ -129,13 +137,6 @@
               Confirm Reservation
             </button>
           </form>
-
-          <div class="booking-divider">or</div>
-
-          <a href="https://wa.me/919512833139?text=Hi!%20I'd%20like%20to%20book%20a%20table%20at%20Beyond%20Temptation." target="_blank" rel="noopener" class="btn-whatsapp">
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-            Book via WhatsApp
-          </a>
         </div>
 
         <!-- SUCCESS STATE -->
@@ -154,18 +155,18 @@
       <div class="booking-sidebar reveal-right">
         <div class="sidebar-card">
           <div class="map-wrap">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3720.0!2d72.7726758!3d21.1495121!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be04d393473ce15%3A0x5fd4a27da62a5fa!2sBeyond%20Temptation%20Surat!5e0!3m2!1sen!2sin!4v1710500000000!5m2!1sen!2sin" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3023.9!2d-73.985428!3d40.748817!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDDCsDQ0JzU1LjciTiA3M8KwNTknMDcuNSJX!5e0!3m2!1sen!2sus!4v1700000000000!5m2!1sen!2sus" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
           </div>
           <div class="sidebar-card-body">
             <h3>Find Us</h3>
             <div class="info-list">
               <div class="info-item">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-                <span>Ground Floor, Atlanta Shoppers, G-53, beside Reliance Market, Vesu, Surat, Gujarat 395007</span>
+                <span>742 Evergreen Terrace, Suite 100, Downtown, New York, NY 10001</span>
               </div>
               <div class="info-item">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-                <span><strong><a href="tel:+919512833139">+91 95128 33139</a></strong></span>
+                <span><strong><a href="tel:+15550123456">+1 (555) 012-3456</a></strong></span>
               </div>
             </div>
           </div>
@@ -177,7 +178,7 @@
             <div class="info-list">
               <div class="info-item">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-                <span><strong>Every Day</strong><br>12:00 PM &ndash; 12:00 AM</span>
+                <span><strong>Every Day</strong><br>8:00 AM &ndash; 11:00 PM</span>
               </div>
             </div>
           </div>
@@ -189,7 +190,7 @@
             <div class="info-list">
               <div class="info-item">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
-                <span><a href="https://www.instagram.com/beyond_temptation_surat" target="_blank" rel="noopener"><strong>@beyond_temptation_surat</strong></a><br>Follow for updates & new arrivals</span>
+                <span><a href="#"><strong>@thecafe</strong></a><br>Follow for updates & new arrivals</span>
               </div>
             </div>
           </div>
@@ -205,18 +206,18 @@
       <div class="footer-grid">
         <div class="footer-brand">
           <div class="footer-logo">
-            <div class="footer-logo-icon">B</div>
-            <span>Beyond Temptation</span>
+            <div class="footer-logo-icon">C</div>
+            <span>Café</span>
           </div>
-          <p>Surat's beloved cafe destination for premium shakes, desserts, and good vibes. Visit us in Vesu.</p>
+          <p>Your neighborhood café for artisan coffee, handcrafted desserts, and good company.</p>
           <div class="footer-socials">
-            <a href="https://www.instagram.com/beyond_temptation_surat" target="_blank" rel="noopener" class="footer-social-link" aria-label="Instagram">
+            <a href="#" class="footer-social-link" aria-label="Instagram">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
             </a>
-            <a href="https://www.google.com/maps/place/Beyond+Temptation+Surat/" target="_blank" rel="noopener" class="footer-social-link" aria-label="Google Maps">
+            <a href="#" class="footer-social-link" aria-label="Location">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
             </a>
-            <a href="tel:+919512833139" class="footer-social-link" aria-label="Phone">
+            <a href="tel:+15550123456" class="footer-social-link" aria-label="Phone">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
             </a>
           </div>
@@ -226,24 +227,26 @@
           <ul>
             <li><a href="index.html">Home</a></li>
             <li><a href="menu.html">Menu</a></li>
-            <li><a href="book.html">Book a Table</a></li>
+            <li><a href="book.html">Reserve</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="contact.html">Contact</a></li>
           </ul>
         </div>
         <div class="footer-column">
           <h4>Visit Us</h4>
           <ul>
-            <li><a href="https://www.google.com/maps/place/Beyond+Temptation+Surat/" target="_blank" rel="noopener">Ground Floor, Atlanta Shoppers, G-53</a></li>
-            <li><a href="https://www.google.com/maps/place/Beyond+Temptation+Surat/" target="_blank" rel="noopener">Beside Reliance Market, Vesu</a></li>
-            <li><a href="https://www.google.com/maps/place/Beyond+Temptation+Surat/" target="_blank" rel="noopener">Surat, Gujarat 395007</a></li>
-            <li><a href="tel:+919512833139">+91 95128 33139</a></li>
+            <li><a href="#">742 Evergreen Terrace</a></li>
+            <li><a href="#">Suite 100, Downtown</a></li>
+            <li><a href="#">New York, NY 10001</a></li>
+            <li><a href="tel:+15550123456">+1 (555) 012-3456</a></li>
           </ul>
         </div>
       </div>
       <div class="footer-bottom">
-        <p>&copy; 2026 Beyond Temptation Surat. All rights reserved.</p>
+        <p>&copy; 2026 Café. All rights reserved.</p>
         <div class="footer-bottom-links">
-          <a href="https://www.instagram.com/beyond_temptation_surat" target="_blank" rel="noopener">Instagram</a>
-          <a href="https://www.google.com/maps/place/Beyond+Temptation+Surat/" target="_blank" rel="noopener">Directions</a>
+          <a href="#">Instagram</a>
+          <a href="#">Directions</a>
         </div>
       </div>
     </div>
@@ -279,10 +282,8 @@
 
       const name = document.getElementById('name').value.trim();
       const phone = document.getElementById('phone').value.trim();
-      const email = document.getElementById('email').value.trim();
       const date = document.getElementById('date').value;
       const time = document.getElementById('time').value;
-      const requests = document.getElementById('requests').value.trim();
 
       if (!name || !phone || !date || !time) {
         alert('Please fill in all required fields.');
@@ -292,26 +293,11 @@
       const timeSelect = document.getElementById('time');
       const timeText = timeSelect.options[timeSelect.selectedIndex].text;
       const dateObj = new Date(date + 'T00:00:00');
-      const dateText = dateObj.toLocaleDateString('en-IN', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' });
-
-      // Build WhatsApp message
-      let msg = `Hello Beyond Temptation! 👋\n\nI'd like to book a table:\n\n`;
-      msg += `👤 *Name:* ${name}\n`;
-      msg += `📞 *Phone:* ${phone}\n`;
-      if (email) msg += `📧 *Email:* ${email}\n`;
-      msg += `📅 *Date:* ${dateText}\n`;
-      msg += `🕐 *Time:* ${timeText}\n`;
-      msg += `👥 *Guests:* ${guests}\n`;
-      if (requests) msg += `📝 *Special Requests:* ${requests}\n`;
-      msg += `\nPlease confirm my reservation. Thank you!`;
-
-      // Open WhatsApp automatically
-      const waUrl = `https://wa.me/919512833139?text=${encodeURIComponent(msg)}`;
-      window.open(waUrl, '_blank', 'noopener');
+      const dateText = dateObj.toLocaleDateString('en-US', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' });
 
       // Update success message
       document.getElementById('success-message').textContent =
-        `Your table for ${guests} guest${guests > 1 ? 's' : ''} on ${dateText} at ${timeText} has been requested. WhatsApp opened to confirm with the restaurant!`;
+        `Your table for ${guests} guest${guests > 1 ? 's' : ''} on ${dateText} at ${timeText} has been reserved. We look forward to seeing you!`;
 
       document.getElementById('form-view').style.display = 'none';
       document.getElementById('booking-success').classList.add('show');
